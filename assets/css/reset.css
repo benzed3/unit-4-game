@@ -1,48 +1,132 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@media screen and (max-width: 980px) {
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	#rules {
+		position: relative;
+		right: 90px;
+	}
+
+	#score {
+		position: relative;
+		right: 90px;
+	}
+
+	#game-number {
+		position: relative;
+		right: 90px;
+	}
+
+	#one {
+		position: relative;
+		right: 100px;
+	}
+
+	#two {
+		position: relative;
+		left: 10px;
+		bottom: 98px;
+	}
+
+	#three {
+		position: relative;
+		left: 120px;
+		bottom: 200px;
+	}
+
+	#four {
+		position: relative;
+		left: 250px;
+		bottom: 298px;
+	}
+
+	#score-text {
+		position: relative;
+		right: 90px;
+		bottom: 300px;
+	}
+
+	#score-points {
+		position: relative;
+		right: 90px;
+		bottom: 300px;
+	}
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+@media screen and (max-width: 768px) {
+
+	#rules {
+		position: relative;
+		right: 80px;
+	}
+
+	#game-number {
+		position: relative; 
+		right: 80px;
+	}
+
+	#score {
+		position: relative;
+		right: 80px;
+	}
+	#score-text {
+		position: relative;
+		right: 80px;
+	}
+
+	#score-points {
+		position: relative;
+		right: 80px;
+	}
 }
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+@media screen and (max-width: 640px) {
+	
+	#rules {
+		position: relative;
+		right: 10px;
+	}
+
+	#score {
+		position: relative;
+		right: 10px;
+	}
+
+	#game-number {
+		position: relative;
+		right: 10px;
+	}
+
+	#one {
+		position: relative;
+		left: 10px;
+	}
+
+	#two {
+		position: relative;
+		left: 135px;
+		bottom: 98px;
+	}
+
+	#three {
+		position: relative;
+		left: 255px;
+		bottom: 200px;
+	}
+
+	#four {
+		position: relative;
+		left: 385px;
+		bottom: 298px;
+	}
+
+	#score-text {
+		position: relative;
+		right: 10px;
+		bottom: 300px;
+	}
+
+	#score-points {
+		position: relative;
+		right: 10px;
+		bottom: 300px;
+	}
 }
