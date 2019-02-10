@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -90,115 +88,14 @@
             <div class="col-lg-3" id="score-points">
                 <h1 id="total-score"></h1>
             </div>
+
         </div>
 
-    </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-
-
-            var number = Math.floor(Math.random() * 101) + 19;
-
-            $("#random-number").text(number);
-
-            var num1 = (Math.floor(Math.random() * 11) + 1);
-            var num2 = (Math.floor(Math.random() * 11) + 1);
-            var num3 = (Math.floor(Math.random() * 11) + 1);
-            var num4 = (Math.floor(Math.random() * 11) + 1);
-
-            function reset() {
-                number = Math.floor(Math.random() * 101 + 19);
-                $("#random-number").text(number);
-                num1 = Math.floor(Math.random() * 11 + 1);
-                num2 = Math.floor(Math.random() * 11 + 1);
-                num3 = Math.floor(Math.random() * 11 + 1);
-                num4 = Math.floor(Math.random() * 11 + 1);
-                total = 0;
-                $("#total-score").text(total);
-            }
-
-
-
-            var total = 0;
-            $("#total-score").text(total);
-
-            $("#one").on("click", function () {
-                total += num1;
-                $("#total-score").text(total);
-                if (total === number) {
-                    winner();
-                    reset();
-                }
-                else if (total >= number) {
-                    loser();
-                    reset();
-                }
-            });
-
-            $("#two").on("click", function () {
-                total += num2;
-                $("#total-score").text(total);
-                if (total === number) {
-                    winner();
-                    reset();
-                }
-                else if (total >= number) {
-                    loser();
-                    reset();
-                }
-            });
-
-            $("#three").on("click", function () {
-                total += num3;
-                $("#total-score").text(total);
-                if (total === number) {
-                    winner();
-                    reset();
-                }
-                else if (total >= number) {
-                    loser();
-                    reset();
-                }
-            });
-
-            $("#four").on("click", function () {
-                total += num4;
-                $("#total-score").text(total);
-                if (total === number) {
-                    winner();
-                    reset();
-                }
-                else if (total >= number) {
-                    loser();
-                    reset();
-                }
-            });
-
-
-            var wins = 0;
-            function winner() {
-                alert("You won!");
-                wins++;
-                $("#win").text("Wins: " + wins);
-                reset();
-            }
-
-            var lose = 0;
-            function loser() {
-                alert("You lose!");
-                lose++;
-                $("#lose").text("Losses: " + lose);
-                reset()
-            }
-
-        });
-
-    </script>
+        <script src="assets/javascript/game.js"></script>
 
 </body>
-
-<script src="assets/javascript/game.js"></script>
 
 </html>
