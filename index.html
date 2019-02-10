@@ -28,15 +28,16 @@
         <div class="row">
             <div class="col-lg-6" id="rules">
                 <br>
-                <h4>You will be given one number at the start of the game.</h4>
+                <h4>You will be given a random number at the start of the game.</h4>
                 <br>
-                <h4>There are four crystal below. By clicking on a crystal you will add a specific amount of points to
-                    your total score.</h4>
+                <h4>There are four different crystals below. Clicking on a crystal will add a specific amount of points
+                    to
+                    your total score/points.</h4>
                 <br>
-                <h4>You win the game by matching your total score to the random number, you lose the game if your total
+                <h4>You win a game by matching your total score to the random number. You lose the game if your total
                     score goes above the random number.</h4>
                 <br>
-                <h4>Each time when the game starts, the game will change the value of each crystal.</h4>
+                <h4>Each time game restarts, the values of the random number and crystals will change. Good luck!</h4>
             </div>
         </div>
 
@@ -45,6 +46,7 @@
         <div class="row">
             <div class="col-lg-3" id="game-number">
                 <h1 id="random-number"></h1>
+                <p id="rn">Random Number</p>
             </div>
             <div class="col-lg-1" id="score">
                 <p id="win">Wins: 0</p>
@@ -94,43 +96,99 @@
 
         $(document).ready(function () {
 
-            var number = $("#random-number").html(Math.floor(Math.random() * 120) + 19);
 
-            var num1 = (Math.floor(Math.random() * 12) + 1);
-            var num2 = (Math.floor(Math.random() * 12) + 1);
-            var num3 = (Math.floor(Math.random() * 12) + 1);
-            var num4 = (Math.floor(Math.random() * 12) + 1);
+            var number = Math.floor(Math.random() * 101) + 19;
+
+            $("#random-number").text(number);
+
+            var num1 = (Math.floor(Math.random() * 11) + 1);
+            var num2 = (Math.floor(Math.random() * 11) + 1);
+            var num3 = (Math.floor(Math.random() * 11) + 1);
+            var num4 = (Math.floor(Math.random() * 11) + 1);
+
+            function reset() {
+                number = Math.floor(Math.random() * 101 + 19);
+                $("#random-number").text(number);
+                num1 = Math.floor(Math.random() * 11 + 1);
+                num2 = Math.floor(Math.random() * 11 + 1);
+                num3 = Math.floor(Math.random() * 11 + 1);
+                num4 = Math.floor(Math.random() * 11 + 1);
+                total = 0;
+                $("#total-score").text(total);
+            }
 
 
 
             var total = 0;
-
             $("#total-score").text(total);
 
             $("#one").on("click", function () {
-                total = num1 + total;
+                total += num1;
                 $("#total-score").text(total);
-
+                if (total === number) {
+                    winner();
+                    reset();
+                }
+                else if (total >= number) {
+                    loser();
+                    reset();
+                }
             });
 
             $("#two").on("click", function () {
-                total = num2 + total;
+                total += num2;
                 $("#total-score").text(total);
+                if (total === number) {
+                    winner();
+                    reset();
+                }
+                else if (total >= number) {
+                    loser();
+                    reset();
+                }
             });
 
             $("#three").on("click", function () {
-                total = num3 + total;
+                total += num3;
                 $("#total-score").text(total);
+                if (total === number) {
+                    winner();
+                    reset();
+                }
+                else if (total >= number) {
+                    loser();
+                    reset();
+                }
             });
 
             $("#four").on("click", function () {
-                total = num2 + total;
+                total += num4;
                 $("#total-score").text(total);
+                if (total === number) {
+                    winner();
+                    reset();
+                }
+                else if (total >= number) {
+                    loser();
+                    reset();
+                }
             });
 
 
-            if (number <= total) {
-                alert("Lose");
+            var wins = 0;
+            function winner() {
+                alert("You won!");
+                wins++;
+                $("#win").text("Wins: " + wins);
+                reset();
+            }
+
+            var lose = 0;
+            function loser() {
+                alert("You lose!");
+                lose++;
+                $("#lose").text("Losses: " + lose);
+                reset()
             }
 
         });
